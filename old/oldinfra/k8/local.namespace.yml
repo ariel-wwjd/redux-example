@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: eiq30-minikube
+  labels:
+    name: eiq30-minikube

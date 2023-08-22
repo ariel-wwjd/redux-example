@@ -1,0 +1,20 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: eiq30
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: eiq30
+  template:
+    metadata:
+      labels:
+        name: eiq30
+    spec:
+      containers:
+        - name: eiq30
+          image: localhost:5000/eiq30
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3333

@@ -1,0 +1,32 @@
+kind: Config
+apiVersion: v1
+current-context: eiq30-minikube
+preferences: {}
+clusters:
+- name: minikube
+  cluster:
+    certificate-authority: $HOME/.minikube/ca.crt
+    extensions:
+    - extension:
+        last-update: Sat, 16 Oct 2021 21:12:29 EDT
+        provider: minikube.sigs.k8s.io
+        version: v1.23.2
+      name: cluster_info
+    server: https://192.168.49.2:8443
+contexts:
+- name: eiq30-minikube
+  context:
+    namespace: eiq30-minikube
+    cluster: minikube
+    user: minikube
+    extensions:
+    - extension:
+        last-update: Sat, 16 Oct 2021 21:12:29 EDT
+        provider: minikube.sigs.k8s.io
+        version: v1.23.2
+      name: context_info
+users:
+- name: minikube
+  user:
+    client-certificate: $HOME/.minikube/profiles/minikube/client.crt
+    client-key: $HOME/.minikube/profiles/minikube/client.key

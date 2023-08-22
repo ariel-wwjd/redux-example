@@ -1,0 +1,35 @@
+resource "kubernetes_deployment" "eiq30" {
+  metadata {
+    name = "eiq30"
+  }
+
+  spec {
+    replicas = 1
+
+    selector {
+      match_labels = {
+        name = "eiq30"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          name = "eiq30"
+        }
+      }
+
+      spec {
+        container {
+          name = "eiq30"
+          image = "localhost:5000/eiq30"
+          image_pull_policy = "Always"
+
+          port {
+            containerPort = 3333
+          }
+        }
+      }
+    }
+  }
+}
